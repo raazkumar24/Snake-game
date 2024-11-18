@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1c1c1c; /* Darker background */
+  font-family: "Arial", sans-serif;
+  color: #fff; /* White text color */
+  animation: fadeIn 1s; /* Fade in animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  transition: transform 0.3s;
+  border: 1px solid #fff; /* White border */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /*Stronger shadow */
+  background-image: url(background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#game-area {
+  position: relative;
+  min-width: 300px; /* Slightly wider game area */
+  min-height: 300px; /* Slightly taller game area */
+  margin: 10px;
+  background-color: #2d2d2d; /* Darker game area background */
+  border: 1px solid #fff; /* White border */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /*Stronger shadow */
+}
+
+.snake {
+  position: absolute;
+  background-color: lime; /* Bright green for the snake */
+  border-radius: 5px; /* Rounded corners for the snake segments */
+  transition: transform 0.1s; /* Smooth transition for snake movement */
+}
+
+.eye {
+  width: 10px; /* Adjust size as needed */
+  height: 10px; /* Adjust size as needed */
+  background-color: white; /* Color of the eyes */
+  border: 2px solid black; /* Optional: add an outline */
+  border-radius: 50%; /* Make it round */
+  position: absolute; /* Required for positioning */
+}
+
+.food {
+  position: absolute;
+  background-color: red; /* Bright red for the food */
+  border-radius: 50%; /* Circular food */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Glow effect for food */
+}
+
+.score {
+  font-size: 24px; /* Larger score font */
+  font-weight: bold; /* Bold score */
+  margin-top: 10px; /* Margin above score */
+}
+
+.controls {
+  margin-top: 20px;
+  font-size: 18px; /* Larger control text */
+  color: #ddd; /* Lighter color for controls */
+}
+
+#game-area {
+  touch-action: none; /* Prevents the default touch actions */
+}
+
+.arrow-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  gap: 10px;
+}
+
+.horizontal-buttons {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.arrow-controls button {
+  background-color: #444;
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s;
+  margin: px;
+}
+
+.arrow-controls button:hover {
+  background-color: #666;
+}
+
+/* Play and Pause Button Styles */
+.btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+#play-btn,
+#pause-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4caf50; /* Green for play */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Pause Button (Red background) */
+#pause-btn {
+  background-color: #f44336; /* Red for pause */
+}
+
+/* Hover Effect */
+#play-btn:hover,
+#pause-btn:hover {
+  background-color: #388e3c; /* Darker green for play */
+  transform: scale(1.05);
+}
+
+#pause-btn:hover {
+  background-color: #d32f2f; /* Darker red for pause */
+}
+
+/* Active (Pressed) Effect */
+#play-btn:active,
+#pause-btn:active {
+  transform: scale(0.95);
+}
